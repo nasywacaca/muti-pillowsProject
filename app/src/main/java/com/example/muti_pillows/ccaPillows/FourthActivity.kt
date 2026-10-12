@@ -1,63 +1,69 @@
 package com.example.muti_pillows.ccaPillows
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.widget.Toolbar
+import com.example.muti_pillows.MainActivity
 import com.example.muti_pillows.R
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 
 class FourthActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_fourth)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        // 1. Setup Toolbar Atas
+        val toolbar = findViewById<Toolbar>(R.id.toolbarFourth)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        // 2. Inisialisasi Semua Tombol
         val btnDetailPillows = findViewById<Button>(R.id.btnDetailPillows)
         val btnShowAlertDialog = findViewById<Button>(R.id.btnShowAlertDialog)
         val btnShowSnackbar = findViewById<Button>(R.id.btnShowSnackbar)
         val btnBack = findViewById<Button>(R.id.btnBack)
 
-        btnDetailPillows?.setOnClickListener {
-            Log.e("MutiPillows", "Tombol lihat snack Pillows diklik")
+        // Tombol "Lihat Detail Snack" -> Pindah ke DetailSnackActivity
+        btnDetailPillows.setOnClickListener {
+            val intent = Intent(this, DetailSnackActivity::class.java)
+            startActivity(intent)
         }
 
-        // 2. Klik Alert Dialog
-        btnShowAlertDialog?.setOnClickListener {
-            MaterialAlertDialogBuilder(this)
+        // Tombol "Beli Pillows (Alert Dialog)"
+        btnShowAlertDialog.setOnClickListener {
+            AlertDialog.Builder(this)
                 .setTitle("Konfirmasi Pembelian")
-                .setMessage("Apakah Anda yakin ingin membeli Muti Pillows Cokelat?")
+                .setMessage("Apakah Anda yakin ingin membeli Oishi Pillows Cokelat?")
                 .setPositiveButton("Beli") { dialog, _ ->
                     dialog.dismiss()
-                    Log.e("MutiPillows", "User membeli Pillows Cokelat")
+                    Snackbar.make(it, "Pembelian berhasil!", Snackbar.LENGTH_SHORT).show()
                 }
                 .setNegativeButton("Batal") { dialog, _ ->
                     dialog.dismiss()
-                    Log.e("MutiPillows", "Pembelian dibatalkan")
                 }
                 .show()
         }
 
-        btnShowSnackbar?.setOnClickListener {
-            Snackbar.make(it, "Diskon Promo Muti Pillows Beli 2 Gratis 1!", Snackbar.LENGTH_SHORT)
-                .setAction("Tutup") {
-                    Log.e("MutiPillows", "Snackbar promo ditutup")
-                }
-                .show()
+        // Tombol "Cek Promo (Snackbar)"
+        btnShowSnackbar.setOnClickListener {
+            Snackbar.make(it, "Promo Diskon 20% untuk Pillows Cokelat!", Snackbar.LENGTH_LONG).show()
         }
 
-        btnBack?.setOnClickListener {
+        // Tombol "Kembali" di Bawah -> Kembali ke MainActivity
+        btnBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
             finish()
         }
+    }
+
+    // Navigasi tombol Panah Kembali (<-) di Toolbar
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }
