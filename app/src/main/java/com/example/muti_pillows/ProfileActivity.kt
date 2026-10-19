@@ -20,7 +20,7 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
 
-        // Fitur Logout P5 (Hapus SharedPreferences & Kembali ke Login)
+        // Fitur Logout
         btnLogout?.setOnClickListener {
             val sharedPref = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()

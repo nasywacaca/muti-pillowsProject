@@ -7,136 +7,29 @@
     android:background="#FAF7F2"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/ivBackgroundMain"
+    <!-- Container untuk menampung Fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:alpha="0.35"
-        android:scaleType="centerCrop"
-        android:src="@drawable/mieayam"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvLogoTitle"
-        android:layout_width="wrap_content"
+    <!-- Bottom Navigation Bar yang Sudah Rapi di Tengah -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="NIKI ECO 602"
-        android:textColor="#9E0B0F"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvWelcomeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selamat Datang"
-        android:textColor="#212121"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:background="#FAF7F2"
+        app:itemIconTint="#9E0B0F"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemTextColor="#9E0B0F"
+        app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogoTitle"
-        app:layout_constraintVertical_bias="0.147"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <TextView
-        android:id="@+id/tvWelcomeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CACA"
-        android:textColor="#9E0B0F"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivBackgroundMain"
-        app:layout_constraintVertical_bias="0.265" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardPoster"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="6dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnMenuNative"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWelcomeUser">
-
-        <ImageView
-            android:id="@+id/ivPoster"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/poster" />
-    </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnMenuNative"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#9E0B0F"
-        android:paddingVertical="12dp"
-        android:text="LIHAT MENU MIE AYAM"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:cornerRadius="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnPemesananWeb"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPemesananWeb"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#212121"
-        android:paddingVertical="12dp"
-        android:text="PEMESANAN MELALUI WEB"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:cornerRadius="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnProfile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <!-- Tombol Profil Developer Baru -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnProfile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#9E0B0F"
-        android:paddingVertical="12dp"
-        android:text="PROFIL DEVELOPER"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:cornerRadius="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

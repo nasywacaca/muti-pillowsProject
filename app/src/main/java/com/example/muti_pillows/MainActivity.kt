@@ -1,32 +1,38 @@
 package com.example.muti_pillows
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnMenuNative = findViewById<MaterialButton>(R.id.btnMenuNative)
-        val btnPemesananWeb = findViewById<MaterialButton>(R.id.btnPemesananWeb)
-        val btnProfile = findViewById<MaterialButton>(R.id.btnProfile)
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavigation)
 
-        // Buka Daftar Menu
-        btnMenuNative.setOnClickListener {
-            startActivity(Intent(this, MenuListActivity::class.java))
+        // Load fragment default (Home) saat pertama dibuka
+        if (savedInstanceState == null) {
+            replaceFragment(HomeFragment())
         }
 
-        // Buka WebView Pemesanan
-        btnPemesananWeb.setOnClickListener {
-            startActivity(Intent(this, WebMieAyamActivity::class.java))
+        // Listener perpindahan menu Bottom Navigation
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> replaceFragment(HomeFragment())
+                R.id.nav_menu -> replaceFragment(MenuFragment())
+                R.id.nav_web -> replaceFragment(WebFragment())
+                R.id.nav_profile -> replaceFragment(ProfileFragment())
+            }
+            true
         }
+    }
 
-        // Buka Profil Developer
-        btnProfile.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }

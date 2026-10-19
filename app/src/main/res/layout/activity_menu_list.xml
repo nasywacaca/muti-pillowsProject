@@ -7,81 +7,42 @@
     android:background="#FAF7F2"
     tools:context=".MenuListActivity">
 
-    <ImageView
-        android:id="@+id/ivBackground"
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvHeaderTitle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:alpha="0.35"
-        android:scaleType="centerCrop"
-        android:src="@drawable/mieayam"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="#9E0B0F"
+        android:padding="16dp"
+        android:text="Daftar Menu Mie Ayam"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Header Toolbar Top -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardHeader"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        app:cardBackgroundColor="#9E0B0F"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/btnBackMenu"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="12dp"
-                android:padding="4dp"
-                android:src="@drawable/ic_launcher_foreground"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="#FFFFFF" />
-
-            <TextView
-                android:id="@+id/tvHeaderTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Daftar Menu NIKI ECO 602"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- ScrollArea Menu -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardHeader">
+        app:layout_constraintTop_toBottomOf="@+id/tvHeaderTitle">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
 
-            <!-- Item 1: Pangsit -->
+            <!-- Item 1: Mie Ayam Pangsit Rebus -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardItem1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="14dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -94,10 +55,10 @@
 
                     <ImageView
                         android:id="@+id/imgMenu1"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/pangsit"
+                        android:src="@drawable/polosan"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -106,36 +67,37 @@
                         android:id="@+id/tvMenuName1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="Mie Ayam Pangsit Rebus"
+                        android:layout_marginStart="12dp"
+                        android:text="Pangsit polosan"
                         android:textColor="#212121"
-                        android:textSize="15sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imgMenu1"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu1" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvMenuPrice1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 15.000"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Rp 10.000"
                         android:textColor="#9E0B0F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName1"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu1"
                         app:layout_constraintTop_toBottomOf="@+id/tvMenuName1" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item 2: Bakso -->
+            <!-- Item 2: Mie Ayam Pangsit Goreng -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardItem2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -148,10 +110,10 @@
 
                     <ImageView
                         android:id="@+id/imgMenu2"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/nici"
+                        android:src="@drawable/pangsit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -160,36 +122,37 @@
                         android:id="@+id/tvMenuName2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="Mie Ayam Bakso"
+                        android:layout_marginStart="12dp"
+                        android:text="Mie Ayam Pangsit Goreng"
                         android:textColor="#212121"
-                        android:textSize="15sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imgMenu2"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu2" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvMenuPrice2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
                         android:text="Rp 18.000"
                         android:textColor="#9E0B0F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName2"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu2"
                         app:layout_constraintTop_toBottomOf="@+id/tvMenuName2" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item 3: Komplit -->
+            <!-- Item 3: Mie Ayam Bakso -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardItem3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -202,10 +165,10 @@
 
                     <ImageView
                         android:id="@+id/imgMenu3"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/komplit"
+                        android:src="@drawable/solaria"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -214,36 +177,37 @@
                         android:id="@+id/tvMenuName3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="Mie Ayam Komplit Spesial"
+                        android:layout_marginStart="12dp"
+                        android:text="Mie Ayam Bakso"
                         android:textColor="#212121"
-                        android:textSize="15sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imgMenu3"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu3" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvMenuPrice3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 22.000"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Rp 20.000"
                         android:textColor="#9E0B0F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName3"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu3"
                         app:layout_constraintTop_toBottomOf="@+id/tvMenuName3" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Item 4: Polosan -->
+            <!-- Item 4: Mie Ayam Komplit -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardItem4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -256,10 +220,10 @@
 
                     <ImageView
                         android:id="@+id/imgMenu4"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/solaria"
+                        android:src="@drawable/komplit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -268,192 +232,31 @@
                         android:id="@+id/tvMenuName4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="Mie Ayam Original (Biasa)"
+                        android:layout_marginStart="12dp"
+                        android:text="Mie Ayam Komplit"
                         android:textColor="#212121"
-                        android:textSize="15sp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imgMenu4"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu4" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tvMenuPrice4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 12.000"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:text="Rp 25.000"
                         android:textColor="#9E0B0F"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName4"
+                        app:layout_constraintStart_toEndOf="@+id/imgMenu4"
                         app:layout_constraintTop_toBottomOf="@+id/tvMenuName4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardItem5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardItem4">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgMenu5"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/polosan"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvMenuName5"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="pangsit polosan"
-                        android:textColor="#212121"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imgMenu5"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu5" />
-
-                    <TextView
-                        android:id="@+id/tvMenuPrice5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 15.000"
-                        android:textColor="#9E0B0F"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName5"
-                        app:layout_constraintTop_toBottomOf="@+id/tvMenuName5" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardItem5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardItem4">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgMenu5"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/polosan"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvMenuName5"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="pangsit polosan"
-                        android:textColor="#212121"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imgMenu5"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu5" />
-
-                    <TextView
-                        android:id="@+id/tvMenuPrice5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 15.000"
-                        android:textColor="#9E0B0F"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName5"
-                        app:layout_constraintTop_toBottomOf="@+id/tvMenuName5" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardItem6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:cardCornerRadius="14dp"
-                app:cardElevation="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardItem5">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgMenu6"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/bakso"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tvMenuName6"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
-                        android:text="Bakso polosan"
-                        android:textColor="#212121"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imgMenu6"
-                        app:layout_constraintTop_toTopOf="@+id/imgMenu6" />
-
-                    <TextView
-                        android:id="@+id/tvMenuPrice6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:text="Rp 15.000"
-                        android:textColor="#9E0B0F"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tvMenuName6"
-                        app:layout_constraintTop_toBottomOf="@+id/tvMenuName6" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout> <!-- baris 295 -->
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
