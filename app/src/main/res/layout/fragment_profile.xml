@@ -188,11 +188,29 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- DITAMBAHKAN (FITUR 1 P9): Tombol Hubungi Outlet -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCallOutlet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#9E0B0F"
+                android:paddingVertical="12dp"
+                android:text="HUBUNGI OUTLET"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:cornerRadius="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardProfileData" />
+
+            <!-- Tombol Logout (Posisi disesuaikan di bawah btnCallOutlet) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="12dp"
                 android:backgroundTint="#9E0B0F"
                 android:paddingVertical="12dp"
                 android:text="LOGOUT"
@@ -202,7 +220,7 @@
                 app:cornerRadius="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardProfileData" />
+                app:layout_constraintTop_toBottomOf="@+id/btnCallOutlet" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

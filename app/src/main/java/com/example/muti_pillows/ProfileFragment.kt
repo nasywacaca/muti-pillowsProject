@@ -2,6 +2,7 @@ package com.example.muti_pillows
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,10 +24,22 @@ class ProfileFragment : Fragment() {
         val btnLogout = view.findViewById<MaterialButton>(R.id.btnLogout)
         val btnHomeProfile = view.findViewById<ImageView>(R.id.btnHomeProfile)
 
+        // DITAMBAHKAN (FITUR 1 P9): Inisialisasi Tombol Hubungi Outlet
+        val btnCallOutlet = view.findViewById<MaterialButton>(R.id.btnCallOutlet)
+
         // Klik ikon Home di toolbar atas -> Pindah ke Tab Home
         btnHomeProfile?.setOnClickListener {
             val bottomNav = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigation)
             bottomNav.selectedItemId = R.id.nav_home
+        }
+
+        // DITAMBAHKAN (FITUR 1 P9): Klik Tombol Hubungi Outlet -> Membuka Phone Dialer
+        btnCallOutlet?.setOnClickListener {
+            val phoneNumber = "081234567890" // Nomor telepon outlet NIKI ECO 602
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data = Uri.parse("tel:$phoneNumber")
+            }
+            startActivity(intent)
         }
 
         // Fungsi Logout
