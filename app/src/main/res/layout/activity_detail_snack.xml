@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1C2E"
+    android:orientation="vertical">
+
+    <!-- Tambahan: Toolbar dengan Tombol Kembali sesuai arahan dosen -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDetail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#22253B"
+        app:title="Detail Snack"
+        app:titleTextColor="#FFFFFF" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Tagline Atas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DETAIL PRODUK SNACK"
+                android:textColor="#F59E0B"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1" />
+
+            <!-- Judul Utama -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="20dp"
+                android:text="Oishi Pillows Cokelat 🍫"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Gambar Snack -->
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginBottom="24dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pillows" />
+
+            <!-- Box Kandungan Gizi -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="#2D262A"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="📊 Kandungan Gizi Utama (Per 30g)"
+                    android:textColor="#F59E0B"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="• Energi / Kalori : 140 kkal\n• Lemak Total : 5 g (Jenuh ~2,5 g)\n• Karbohidrat : 21 g\n• Protein : 2 g\n• Natrium / Garam : 55 mg"
+                    android:textColor="#E2E8F0"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Box Komposisi Bahan -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="#2D262A"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="🥣 Komposisi Bahan"
+                    android:textColor="#F59E0B"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="6dp"
+                    android:text="• Tepung terigu &amp; tepung beras\n• Gula (isian manis/cokelat)\n• Minyak nabati (antioksidan TBHQ)\n• Bubuk kakao / perisa tambahan\n• Susu skim bubuk &amp; whey bubuk"
+                    android:textColor="#E2E8F0"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Tambahan: Tombol Kembali manual di bagian bawah -->
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#F59E0B"
+                android:text="KEMBALI"
+                android:textColor="#1A1C2E"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
